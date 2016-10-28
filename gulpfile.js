@@ -67,14 +67,20 @@ gulp.task('scripts', function() {
 //html
 gulp.task('html', function() {
 
-    //主模块html
+    //公共模块
+    gulp.src('./src/common/html/*.html')
+
+        .pipe(gulp.dest('./build/common/html/'));
+
+
+ //主模块html
     gulp.src('./src/module/main/*.html')
 
         .pipe(gulp.dest('./build/module/main/'));
 
 
     //监控html变化
-    gulp.watch(['./src/module/main/*.html'],function () {
+    gulp.watch(['./src/module/main/*.html','./src/common/html/*.html'],function () {
         gulp.run('html');
     })
 });

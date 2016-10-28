@@ -5,6 +5,10 @@ console.log("main /////js");
 
 
 $(function () {
+
+    clientSideInclude('header', '../../common/html/header.html');
+    clientSideInclude('footer', '../../common/html/footer.html');
+
     //赋值 for interpolation
     var dataInter = {"name":"Jake","age":32};
     var interText = doT.template($("#interpolationtmpl").text());
