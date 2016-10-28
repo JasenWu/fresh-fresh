@@ -1,40 +1,20 @@
 {
-  "name": "dot",
-  "description": "Concise and fast javascript templating compatible with nodejs and other javascript environments",
-  "keywords": [
-    "template",
-    "fast",
-    "simple",
-    "templating"
-  ],
-  "version": "1.0.3",
+  "name": "fresh&fresh",
+  "description": "",
+  "keywords": [],
+  "version": "0.0.1",
   "main": "index",
-  "bin": {
-    "dottojs": "./bin/dot-packer"
-  },
-  "homepage": "http://github.com/olado/doT",
-  "repository": "git://github.com/olado/doT.git",
-  "author": "Laura Doktorova <ldoktorova@gmail.com>",
-  "engines": [
-    "node >=0.2.6"
-  ],
-  "scripts": {
-    "test": "mocha"
-  },
+  "bin": {},
   "dependencies": {},
   "devDependencies": {
-    "browserify": "^13.1.1",
-    "commander": "*",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.2",
     "gulp-less": "^3.1.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-sync": "^0.1.4",
+    "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.10",
     "jshint": "*",
-    "mkdirp": "*",
-    "mocha": "*",
-    "require-dir": "^0.3.1",
     "uglify-js": "*",
     "vinyl-buffer": "^1.0.0"
   }

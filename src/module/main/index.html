@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../common/js/common.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+test
+
+<div class="test">dsfsdfds</div>
+
+
+
+<h1>for interpolation 赋值</h1>
+<!--for interpolation //赋值-->
+<script id="interpolationtmpl" type="text/x-dot-template">
+    <div>Hi {{=it.name}}!</div>
+    <div>{{=it.age || ''}}</div>
+</script>
+
+<div id="interpolation"></div>
+
+<button id="changeVal" >change value</button>
+
+
+
+<h1>循环 for evaluation</h1>
+<!--循环 for evaluation-->
+<script id="evaluationtmpl" type="text/x-dot-template">
+    {{ for(var prop in it) { }}
+    <div>KEY:{{= prop }}---VALUE:{{= it[prop] }}</div>
+    {{ } }}
+</script>
+<div id="evaluation"></div>
+
+
+
+<input id="input" type="text" value="" />
+
+<!--//数组 for array iteration-->
+<h1>数组 for array iteration</h1>
+<script id="arraystmpl" type="text/x-dot-template">
+    {{~it.array:value:index}}
+    <div>{{= index+1 }}{{= value }}!</div>
+    {{~}}
+</script>
+
+<div id="arrays"></div>
+
+<button id="addArr">add to arr</button>
+
+
+<h1>for conditionals 条件</h1>
+<!--for conditionals 条件-->
+<script id="encodetmpl" type="text/x-dot-template">
+    {{if (!it.name) { }}
+    <div>Oh, I love your name, {{=it.name}}!</div>
+    {{ }else if (!it.age === 0) {}}
+    <div>Guess nobody named you yet!</div>
+    {{ } else {}}
+    You are {{=it.age}} and still dont have a name?
+    {{}}}
+</script>
+<div id="condition"></div>
+
+
+<!--for interpolation with encoding-->
+<h1>for interpolation with encoding</h1>
+<script id="encodetmpl2" type="text/x-dot-template">
+    Visit {{!it.uri}} {{!it.html}}
+</script>
+
+<div id="encode"></div>
+
+
+<h1>for compile-time evaluation/includes and partials</h1>
+<script id="parttmpl" type="text/x-dot-template">
+    {{##def.snippet:
+    <div>{{=it.name}}</div>{{#def.joke}}
+    #}}
+    {{#def.snippet}}
+    {{=it.html}}
+</script>
+
+<div id="part"></div>
+
+
+<h1>for compile-time defines</h1>
+<script id="parttmpl2" type="text/x-dot-template">
+    {{##def.snippet:
+    <div>{{=it.name}}</div>{{#def.joke}}
+    #}}
+    {{#def.snippet}}
+    {{=it.html}}
+</script>
+
+<div id="part2"></div>
+</body>
+</html>
