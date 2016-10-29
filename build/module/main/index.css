@@ -1,3 +1,8 @@
-.test {
+.index {
   color: green;
+}
+#hammer {
+  height: 200px;
+  width: 200px;
+  background: gray;
 }

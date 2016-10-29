@@ -88,11 +88,73 @@ gulp.task('html', function() {
 
 
 
+//build
+gulp.task('build', function() {
+
+    //公共模块JS
+    gulp.src(['./src/common/js/jquery.min.js','./src/common/js/doT.min.js','./src/common/js/hammer.min.js', './src/common/js/common.js'])
+
+        .pipe(concat('common.js'))
+        .pipe(gulp.dest('./build/common/js/'))
+        .pipe(rename('common.min.js'))
+        //.pipe(uglify())
+        .pipe(gulp.dest('./build/common/js/'));
+
+    //各模块JS
+    gulp.src(['./src/module/main/index.js','./src/module/about/index.js'])
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('./build/common/js/'))
+        .pipe(rename('app.min.js'))
+        //.pipe(uglify())
+        .pipe(gulp.dest('./build/common/js/'));
+
+    //各模块Less
+    gulp.src(['./src/module/main/index.less','./src/module/about/index.less'])
+
+        .pipe(less())
+        .pipe(concat('app.less'))
+
+        .pipe(gulp.dest('./build/common/css/'))
+        .pipe(rename('app.min.less'))
+        //.pipe(uglify())
+        .pipe(gulp.dest('./build/common/less/'));
+
+
+
+});
+
+
+
+
 // 默认任务
 gulp.task('default', function(){
     gulp.run('less','scripts','html');
 
 });
+
+
+// 默认任务
+gulp.task('Watch', function(){
+    //监控js变化
+    gulp.watch(['./src/module/main/index.js','./src/module/about/index.js'],function () {
+        gulp.run('build');
+    })
+
+    //监控less变化
+    gulp.watch(['./src/module/main/index.less','./src/module/about/index.less'],function () {
+        gulp.run('build');
+    })
+
+});
+
+// 默认任务
+gulp.task('buildAndWatch', function(){
+    gulp.run('Watch','build');
+
+});
+
+
+
 
 
 
