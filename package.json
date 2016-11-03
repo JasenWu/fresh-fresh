@@ -1,11 +1,14 @@
 {
-  "name": "fresh&fresh",
-  "description": "",
+  "name": "fresh-fresh",
+  "description": "fresh&fresh",
   "keywords": [],
   "version": "0.0.1",
   "main": "index",
   "bin": {},
-  "dependencies": {},
+  "repository":"https://github.com/JasenWu/fresh-fresh.git",
+  "dependencies": {
+
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",

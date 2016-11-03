@@ -17,15 +17,15 @@ $(function () {
 
 
 
-    hammertime.on('pinchin', function(ev) {
+    hammertime.on('pan', function(ev) {
         console.log(ev);
-        alert('pinchin');
+        alert('pan');
     });
 
 
 
-    clientSideInclude('header', 'http://192.168.31.148/fresh-fresh//build/common/html/header.html');
-    clientSideInclude('footer', 'http://192.168.31.148/fresh-fresh//build/common/html/footer.html');
+    clientSideInclude('header', 'http://192.168.31.153/fresh-fresh//build/common/html/header.html');
+    clientSideInclude('footer', 'http://192.168.31.153/fresh-fresh//build/common/html/footer.html');
 
     //赋值 for interpolation
     var dataInter = {"name":"Jake","age":32};
